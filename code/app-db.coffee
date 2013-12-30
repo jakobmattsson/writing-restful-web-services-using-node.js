@@ -28,7 +28,7 @@ Object.keys(models).forEach (modelName) ->
     typeof paths[p].options.ref == 'string'
   .map (x) -> paths[x].options.ref
 
-  owners.forEach (owners) ->
+  owners.forEach (owner) ->
     app.get "/#{owner}/:id/#{name}" , (res, req) ->
       listSub models[name], owner, req.params.id, (err, data) ->
         res.json data
