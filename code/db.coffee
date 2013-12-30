@@ -1,4 +1,5 @@
 mongoose = require 'mongoose'
+ObjectId = mongoose.Schema.ObjectId
 
 mongoose.connect 'mongodb://localhost/tamblr'
 
@@ -37,7 +38,7 @@ posts = model 'posts',
     default: ''
   published:
     type: Date
-  blogs
+  blogs:
     type: ObjectId
     ref: 'blogs'
 
